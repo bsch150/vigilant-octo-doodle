@@ -5,19 +5,8 @@ var START_TIME = new Date();
 
 /* GET health check. */
 router.get('/', function(req, res, next) {
-  res.json({
-    START_TIME: prettyFormatDate(START_TIME),
-    UP_TIME: millisToHoursAndMinutes(new Date() - START_TIME),
-  });
+  res.status(200);
+  res.send();
 });
-
-function prettyFormatDate(date) {
-  return date.getDate() + "/" + date.getMonth() + "/" + date.getFullYear() + ", " + date.getHours() + ":" + date.getMinutes();
-}
-
-function millisToHoursAndMinutes(millis) {
-  var numMinutes = Number.parseFloat(millis / 1000 / 60).toPrecision(3);
-  return numMinutes + " minutes";
-}
 
 module.exports = router;
