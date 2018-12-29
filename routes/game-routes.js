@@ -1,10 +1,8 @@
 var express = require('express');
 var router = express.Router();
 
-var START_TIME = new Date();
-
-/* GET health check. */
-router.get('/', function(req, res, next) {
+router.post('/', function(req, res, next) {
+  console.log(req.body);
   res.status(200);
   res.send();
 });
